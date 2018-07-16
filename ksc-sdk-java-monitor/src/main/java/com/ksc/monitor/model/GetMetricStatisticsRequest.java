@@ -38,6 +38,10 @@ public class GetMetricStatisticsRequest extends KscWebServiceRequest
 	 * 获取监控指标的聚合方法：Average,Sum,Count,Max,Min 
 	 */
 	private String aggregate;
+	/**
+	 * 监控指标维度，目前只支持docker 
+	 */
+	private HashMap<String,String> dimensions;
 	
 	/**
 	 * This method is intended for internal use only. Returns the marshaled
@@ -106,6 +110,13 @@ public class GetMetricStatisticsRequest extends KscWebServiceRequest
 
 	public void setAggregate(String aggregate) {
 		this.aggregate = aggregate;
+	}
+	public HashMap<String, String> getDimensions() {
+		return dimensions;
+	}
+
+	public void setDimensions(HashMap<String, String> dimensions) {
+		this.dimensions = dimensions;
 	}
 
 }
